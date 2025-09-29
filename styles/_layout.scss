@@ -1,0 +1,169 @@
+@use 'variables' as * ;
+@use 'mixins' as * ;
+
+.wrapper {
+  max-width: $wrapper;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: $container;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+
+  @include max-screen(mobile) {
+    padding: 0 0.8rem;
+  }
+}
+
+.header {
+  height: 25.6rem;
+  position: relative;
+  @include flex-ct-c;
+  background: url("/images/hero-img.jpg") no-repeat center;
+  background-size: cover;
+
+  @include max-screen(mobile) {
+    padding-top: 2.4rem;
+  }
+}
+
+
+#toggle-btn {
+  display: none;
+
+  &:checked ~ .main .cv-info {
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:checked ~ .main {
+    overflow: hidden;
+  }
+
+  &:checked ~ .toggle-btn {
+    .hamburg__line:nth-child(odd) {
+      opacity: 0;
+    }
+
+    .hamburg__line:nth-child(2) {
+      transform: rotate(45deg);
+    }
+
+    .hamburg__line:nth-child(4) {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &:checked ~ .overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.toggle-btn {
+  display: none;
+  position: fixed;
+  top: 2.4rem;
+  right: 2.4rem;
+  @include square(4rem);
+  padding: 1rem;
+  border: 1px solid $secondary-color;
+  border-radius: 50%;
+  background-color: $primary-color;
+  z-index: 999;
+
+  @include max-screen(mobile) {
+    @include flex-ct;
+  }
+
+  .hamburg {
+    width: 100%;
+    height: 80%;
+    @include flex-ct-c;
+    position: relative;
+
+    &__line {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $neutral-color;
+      transition: all 0.3s ease-in-out;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(even) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:nth-child(3) {
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease;
+}
+
+.main {
+  display: flex;
+
+  .cv-info {
+    width: aside-w(sm);
+    padding: (avatar-w(lg) / 2 + 3.6rem) 2.4rem 6.4rem;
+    background-color: $primary-color;
+    position: relative;
+    font-size: $text-caption;
+    color: $neutral-color;
+
+    @include max-screen(laptop) {
+      width: aside-w(md);
+      padding: (avatar-w(md) / 2 + 2.4rem) 1.6rem 4.8rem;
+    }
+
+    @include max-screen(mobile) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 70%;
+      height: 100vh;
+      overflow-y: scroll;
+      z-index: 100;
+      transform: translateX(-100%);
+      padding-top: 2.4rem;
+    }
+
+    @include max-screen(small-mobile) {
+      width: 100%;
+    }
+  }
+
+  .cv-main {
+    width: 100% - aside-w(sm);
+    padding: 2.4rem;
+    background-color: $base-background-color;
+
+    @include max-screen(laptop) {
+      width: 100% - aside-w(md);
+      padding: 1.6rem;
+    }
+
+    @include max-screen(mobile) {
+      width: 100%;
+    }
+  }
+}

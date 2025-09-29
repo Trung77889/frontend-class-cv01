@@ -1,0 +1,33 @@
+$primary-color: #5b4f41;
+$secondary-color: #b1a28b;
+$base-background-color: #e2e6e9;
+$white-color: #fafafb;
+$neutral-color: #d2d2d2;
+
+$primary-font: "Manrope", sans-serif;
+$secondary-font: "Dancing Script", cursive;
+$text-small: 1.2rem;
+$text-caption: 1.4rem;
+$text-base: 1.6rem;
+$text-lg: 1.8rem;
+
+$wrapper: 144rem;
+$container: 102.4rem;
+$section-gap: 3.6rem;
+
+$avatar-width: (
+        sm: 14rem,
+        md: 16rem,
+        lg: 18rem
+);
+
+$aside-width: (
+        sm: 25%,
+        md: 30%
+);
+
+$breakpoints: (
+        small-mobile: 320px,
+        mobile: 650px,
+        laptop: 1024px
+);

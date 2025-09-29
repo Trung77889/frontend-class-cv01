@@ -1,0 +1,38 @@
+@use 'variables' as * ;
+
+@mixin flex-ct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-ct-c {
+  @include flex-ct;
+  flex-direction: column;
+}
+
+@mixin abs-ct {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin square($edge) {
+  width: $edge;
+  height: $edge;
+}
+
+@function aside-w($size) {
+  @return map-get($aside-width, $size);
+}
+
+@function avatar-w($size) {
+  @return map-get($avatar-width, $size);
+}
+
+@mixin max-screen($breakpoint) {
+  @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}

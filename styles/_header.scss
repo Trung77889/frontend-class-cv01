@@ -1,0 +1,94 @@
+@use 'variables' as * ;
+@use 'mixins' as * ;
+
+.header {
+  &__label {
+    position: absolute;
+    top: 0;
+    left: aside-w(sm) / 2;
+    transform: translateX(-50%);
+
+    width: 5rem;
+    padding: 2.4rem 0 1.2rem;
+    background-color: $primary-color;
+
+    font-family: $secondary-font;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: $secondary-color;
+
+    @include max-screen(laptop) {
+      left: aside-w(md) / 2;
+    }
+
+    @include max-screen(mobile) {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      @include square(0);
+      border-top: 1.6rem solid $primary-color;
+      border-inline: 2.5rem solid transparent;
+    }
+  }
+
+  &__caption {
+    font-size: $text-caption;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  &__name {
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+
+    @include max-screen(mobile) {
+      max-width: 80%;
+      font-size: 3.2rem;
+    }
+  }
+
+  &__jobs {
+    padding: 6px 0;
+    border-block: 1px solid $primary-color;
+  }
+}
+
+.job {
+  &__list {
+    display: flex;
+    padding: 0.8rem;
+    background-color: $primary-color;
+    clip-path: polygon(
+                    15px 0, calc(100% - 15px) 0,
+                    100% 50%, calc(100% - 15px) 100%,
+                    15px 100%, 0 50%
+    );
+  }
+
+  &__item {
+    @include flex-ct;
+    padding: 0 1.6rem;
+
+    &:not(:last-child) {
+      border-right: 1px solid $white-color;
+    }
+  }
+
+  &__title {
+    font-size: $text-small;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: $white-color;
+  }
+}
