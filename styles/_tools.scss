@@ -104,7 +104,8 @@
 
   @include max-screen(laptop) {
     position: fixed;
-    top: 75%;
+    top: auto;
+    bottom: 9.6rem;
     right: 2.4rem;
   }
 

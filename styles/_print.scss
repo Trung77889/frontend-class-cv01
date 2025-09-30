@@ -16,7 +16,7 @@
   }
 
   .header {
-    height: 68mm !important;
+    min-height: 65mm !important;
   }
 
   .cv-info {
@@ -28,7 +28,7 @@
     }
   }
 
-  .cv-print {
+  .cv-tool {
     display: none;
   }
 

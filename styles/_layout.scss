@@ -17,7 +17,7 @@
 }
 
 .header {
-  height: $header-height;
+  min-height: $header-height;
   position: relative;
   @include flex-ct-c;
   background: url("../assets/images/hero-img.jpg") no-repeat center;

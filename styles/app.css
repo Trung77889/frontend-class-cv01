@@ -32,12 +32,12 @@ button {
 }
 
 .wrapper {
-  max-width: 144rem;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
 .container {
-  max-width: 102.4rem;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 0 1.6rem;
 }
@@ -48,7 +48,7 @@ button {
 }
 
 .header {
-  height: 30vh;
+  min-height: 30vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -213,7 +213,8 @@ button {
 @media screen and (max-width: 1024px) {
   .cv-tool {
     position: fixed;
-    top: 75%;
+    top: auto;
+    bottom: 9.6rem;
     right: 2.4rem;
   }
 }
@@ -353,6 +354,8 @@ button {
 .cv-info__image img {
   width: 100%;
   height: 100%;
+  object-position: top;
+  border-radius: 50%;
 }
 @media screen and (max-width: 1024px) {
   .cv-info__image {
@@ -410,7 +413,7 @@ button {
   display: flex;
   align-items: start;
   justify-content: space-between;
-  padding: 0.6rem 0;
+  padding: 0.8rem 0;
   border-bottom: 1px solid #b1a28b;
 }
 .info-section__label {
@@ -461,7 +464,7 @@ button {
   word-spacing: 4px;
   text-transform: uppercase;
   border-bottom: 1px solid #5b4f41;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.6rem;
 }
 .main-section__content {
   line-height: 1.5;
@@ -545,12 +548,12 @@ button {
   margin-left: 1rem;
 }
 .work-experience__item:not(:last-child) {
-  padding-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
 }
 .work-experience__label {
   display: flex;
   gap: 1rem;
-  padding: 1.2rem 1.6rem 0.8rem 1.6rem;
+  padding: 0 1.6rem 0.8rem;
   margin-bottom: 1.2rem;
   border-bottom: 1px solid #5b4f41;
   position: relative;
@@ -631,7 +634,7 @@ button {
     padding: 0;
   }
   .header {
-    height: 68mm !important;
+    min-height: 65mm !important;
   }
   .cv-info {
     padding-top: 25mm !important;
@@ -640,7 +643,7 @@ button {
     width: 40mm !important;
     height: 40mm !important;
   }
-  .cv-print {
+  .cv-tool {
     display: none;
   }
   .hobby__icon {

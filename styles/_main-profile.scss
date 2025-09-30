@@ -15,7 +15,7 @@
     word-spacing: 4px;
     text-transform: uppercase;
     border-bottom: 1px solid $primary-color;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.6rem;
   }
 
   &__content {
@@ -103,14 +103,14 @@
     margin-left: 1rem;
 
     &:not(:last-child) {
-      padding-bottom: 1.6rem;
+      padding-bottom: 1.2rem;
     }
   }
 
   &__label {
     display: flex;
     gap: 1rem;
-    padding: 1.2rem 1.6rem 0.8rem 1.6rem;
+    padding: 0 1.6rem 0.8rem;
     margin-bottom: 1.2rem;
     border-bottom: 1px solid $primary-color;
     position: relative;
