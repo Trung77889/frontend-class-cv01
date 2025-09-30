@@ -102,10 +102,9 @@
   right: 2.4rem;
   z-index: 999;
 
-  @include max-screen(mobile) {
+  @include max-screen(laptop) {
     position: fixed;
-    top: auto;
-    bottom: 2.4rem;
+    top: 75%;
     right: 2.4rem;
   }
 
@@ -115,20 +114,20 @@
     font-weight: 700;
     margin-right: 1.6rem;
 
-    @include max-screen(mobile) {
+    @include max-screen(laptop) {
       display: none;
     }
   }
 
   .print-btn {
-    @include max-screen(mobile) {
+    @include max-screen(laptop) {
       display: none;
     }
   }
 
   .download-btn {
     display: none;
-    @include max-screen(mobile) {
+    @include max-screen(laptop) {
       display: flex;
     }
   }
