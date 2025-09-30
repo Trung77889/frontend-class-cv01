@@ -1,0 +1,39 @@
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .container {
+    width: 297mm;
+    padding: 0;
+  }
+
+  .header {
+    height: 68mm !important;
+  }
+
+  .cv-info {
+    padding-top: 25mm !important;
+
+    &__image {
+      width: 40mm !important;
+      height: 40mm !important;
+    }
+  }
+
+  .cv-print {
+    display: none;
+  }
+
+  .hobby__icon {
+    width: 18mm !important;
+    height: 18mm !important;
+  }
+}
