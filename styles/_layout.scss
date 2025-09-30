@@ -20,7 +20,7 @@
   height: $header-height;
   position: relative;
   @include flex-ct-c;
-  background: url("../images/hero-img.jpg") no-repeat center;
+  background: url("../assets/images/hero-img.jpg") no-repeat center;
   background-size: cover;
 
   @include max-screen(mobile) {
